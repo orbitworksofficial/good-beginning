@@ -5,68 +5,56 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Brand palette recovered from the original Elementor kit,
-        // saturated up so it reads like the painted blocks in the logo.
-        ink: "#2A2140",
-        navy: "#303650",
-        berry: "#7B2FF2",
-        tomato: "#EE3524",
-        sunshine: "#F9D616",
-        bubblegum: "#F08FC8",
-        jade: "#4FB59B",
-        periwinkle: {
-          DEFAULT: "#9AACE3",
-          light: "#BFCBEE",
-          dark: "#7186CE",
+        // Muted, professional palette derived from the original brand colors.
+        // Warm-toned neutrals so headings sit comfortably on peach.
+        navy: {
+          DEFAULT: "#3D2B24",
+          dark: "#2A1D18",
+          light: "#6B564C",
         },
+        // Warm peach + coral, echoing the orange/red blocks in the logo.
         coral: {
-          DEFAULT: "#EC965D",
-          light: "#F5BC93",
-          dark: "#D97A3C",
+          DEFAULT: "#E2673C",
+          dark: "#C4512B",
+          mid: "#EE8256",
+          light: "#FDE8DC",
+          tint: "#FFF4EE",
         },
-        cream: "#FBF3EC",
-        sand: "#F4E4D6",
+        cocoa: {
+          DEFAULT: "#3D2B24",
+          light: "#6B564C",
+        },
+        slate: {
+          50: "#FAF7F5",
+          100: "#F5F0EC",
+          200: "#EBE3DD",
+          300: "#D9CDC4",
+          500: "#8A776D",
+          600: "#6B564C",
+          700: "#4A382F",
+        },
       },
       fontFamily: {
-        display: ["var(--font-display)", "Georgia", "serif"],
-        sans: ["var(--font-body)", "system-ui", "sans-serif"],
+        sans: ["var(--font-sans)", "system-ui", "sans-serif"],
       },
       fontSize: {
-        // Tighter leading on display sizes so big headings stack like blocks.
-        "display-sm": ["2.25rem", { lineHeight: "1.05", letterSpacing: "-0.02em" }],
-        "display-md": ["3.25rem", { lineHeight: "1.02", letterSpacing: "-0.025em" }],
-        "display-lg": ["4.5rem", { lineHeight: "0.98", letterSpacing: "-0.03em" }],
-      },
-      borderRadius: {
-        block: "1.25rem",
-        "block-lg": "2rem",
+        "h1": ["2.5rem", { lineHeight: "1.18", letterSpacing: "-0.02em" }],
+        "h1-lg": ["3.25rem", { lineHeight: "1.12", letterSpacing: "-0.022em" }],
+        "h2": ["1.875rem", { lineHeight: "1.25", letterSpacing: "-0.015em" }],
+        "h2-lg": ["2.25rem", { lineHeight: "1.22", letterSpacing: "-0.018em" }],
       },
       boxShadow: {
-        // Hard, offset shadows — the signature of the block system.
-        block: "0 6px 0 0 rgba(42,33,64,0.18)",
-        "block-lg": "0 10px 0 0 rgba(42,33,64,0.16)",
-        "block-press": "0 2px 0 0 rgba(42,33,64,0.2)",
-        pop: "8px 8px 0 0 #2A2140",
-        "pop-sm": "5px 5px 0 0 #2A2140",
+        card: "0 1px 2px rgba(16,24,40,0.04), 0 4px 12px rgba(16,24,40,0.06)",
+        "card-hover": "0 2px 4px rgba(16,24,40,0.05), 0 12px 28px rgba(16,24,40,0.10)",
       },
       keyframes: {
-        float: {
-          "0%, 100%": { transform: "translateY(0)" },
-          "50%": { transform: "translateY(-14px)" },
-        },
         "fade-up": {
-          "0%": { opacity: "0", transform: "translateY(24px)" },
+          "0%": { opacity: "0", transform: "translateY(16px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
-        },
-        wiggle: {
-          "0%, 100%": { transform: "rotate(-2deg)" },
-          "50%": { transform: "rotate(2deg)" },
         },
       },
       animation: {
-        float: "float 6s ease-in-out infinite",
-        "fade-up": "fade-up 0.7s ease-out both",
-        wiggle: "wiggle 3.5s ease-in-out infinite",
+        "fade-up": "fade-up 0.6s ease-out both",
       },
     },
   },

@@ -8,16 +8,11 @@
   }
 
   body {
-    @apply bg-cream text-ink antialiased;
-  }
-
-  /* Fraunces variable axes: soft corners + a little wonk = personality. */
-  .font-display {
-    font-variation-settings: "SOFT" 60, "WONK" 1;
+    @apply bg-white text-slate-700 antialiased;
   }
 
   ::selection {
-    @apply bg-sunshine text-ink;
+    @apply bg-coral-light text-navy;
   }
 }
 
@@ -26,97 +21,61 @@
     @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
   }
 
-  /* ---------- Buttons: chunky, pressable blocks ---------- */
+  /* ---------- Buttons ---------- */
   .btn {
-    @apply inline-flex items-center justify-center gap-2 rounded-block border-[3px]
-           border-ink px-7 py-3.5 text-sm font-bold transition-all duration-150
-           focus:outline-none focus-visible:ring-4 focus-visible:ring-sunshine;
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-6 py-3
+           text-sm font-semibold transition-all duration-200
+           focus:outline-none focus-visible:ring-2 focus-visible:ring-coral
+           focus-visible:ring-offset-2;
   }
 
   .btn-primary {
-    @apply btn bg-tomato text-white shadow-pop-sm
-           hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-pop
-           active:translate-x-1 active:translate-y-1 active:shadow-none;
+    @apply btn bg-coral text-white shadow-sm hover:bg-coral-dark;
   }
 
   .btn-secondary {
-    @apply btn bg-white text-ink shadow-pop-sm
-           hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-pop
-           active:translate-x-1 active:translate-y-1 active:shadow-none;
+    @apply btn border border-slate-300 bg-white text-navy hover:border-slate-500 hover:bg-slate-50;
   }
 
-  .btn-sunshine {
-    @apply btn bg-sunshine text-ink shadow-pop-sm
-           hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-pop
-           active:translate-x-1 active:translate-y-1 active:shadow-none;
+  .btn-light {
+    @apply btn bg-white text-navy hover:bg-slate-100;
+  }
+
+  .btn-outline-light {
+    @apply btn border border-white/40 text-white hover:bg-white/10;
   }
 
   .section {
-    @apply py-20 sm:py-28;
+    @apply py-16 sm:py-24;
   }
 
-  /* ---------- Eyebrow: a small tilted label, like a name tag ---------- */
   .eyebrow {
-    @apply inline-flex -rotate-1 items-center gap-2 rounded-lg border-[3px] border-ink
-           bg-sunshine px-4 py-1.5 text-xs font-extrabold uppercase
-           tracking-[0.14em] text-ink shadow-pop-sm;
+    @apply text-xs font-semibold uppercase tracking-[0.12em] text-coral;
   }
 
   .h-section {
-    @apply font-display text-display-sm font-black sm:text-[2.75rem] lg:text-display-md;
+    @apply text-h2 font-semibold text-navy lg:text-h2-lg;
   }
 
-  /* ---------- The block card: thick outline + hard shadow ---------- */
-  .block-card {
-    @apply relative rounded-block-lg border-[3px] border-ink bg-white
-           transition-all duration-200;
-    box-shadow: 6px 6px 0 0 theme("colors.ink");
+  /* ---------- Cards ---------- */
+  .card {
+    @apply rounded-xl border border-slate-200 bg-white shadow-card transition-shadow duration-200;
   }
 
-  .block-card-hover {
-    @apply hover:-translate-x-1 hover:-translate-y-1;
+  .card-hover {
+    @apply hover:shadow-card-hover;
   }
 
-  .block-card-hover:hover {
-    box-shadow: 10px 10px 0 0 theme("colors.ink");
-  }
-
-  /* The colored cap that makes a card read as a stacked block. */
-  .block-cap {
-    @apply h-3.5 w-full rounded-t-[0.9rem] border-b-[3px] border-ink;
-  }
-
-  /* ---------- Inputs styled as blocks ---------- */
+  /* ---------- Forms ---------- */
   .field {
-    @apply w-full rounded-block border-[3px] border-ink bg-white px-4 py-3
-           text-sm font-medium text-ink outline-none transition
-           placeholder:text-ink/40 focus:ring-4 focus:ring-sunshine;
+    @apply w-full rounded-lg border border-slate-300 bg-white px-4 py-2.5
+           text-sm text-navy outline-none transition
+           placeholder:text-slate-500/70
+           focus:border-coral focus:ring-2 focus:ring-coral/20;
   }
 
   .label {
-    @apply block text-sm font-bold text-ink;
-  }
-}
-
-@layer utilities {
-  /* Subtle dotted texture, like construction paper. */
-  .bg-dots {
-    background-image: radial-gradient(
-      theme("colors.ink / 12%") 1.5px,
-      transparent 1.5px
-    );
-    background-size: 22px 22px;
-  }
-
-  .bg-grid-blocks {
-    background-image:
-      linear-gradient(theme("colors.ink / 6%") 3px, transparent 3px),
-      linear-gradient(90deg, theme("colors.ink / 6%") 3px, transparent 3px);
-    background-size: 64px 64px;
-  }
-
-  .text-stroke-ink {
-    -webkit-text-stroke: 2px theme("colors.ink");
+    @apply block text-sm font-medium text-navy;
   }
 }
 
@@ -126,11 +85,11 @@
    hide the not-yet-seen elements and animate them in. */
 .reveal-ready .reveal:not(.is-visible) {
   opacity: 0;
-  transform: translateY(26px);
+  transform: translateY(16px);
 }
 
 .reveal {
-  transition: opacity 0.6s ease-out, transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
 
 .reveal.is-visible {

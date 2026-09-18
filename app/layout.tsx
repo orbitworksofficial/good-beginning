@@ -1,25 +1,14 @@
 import type { Metadata } from "next";
-import { Fraunces, Outfit } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Reveal from "./components/Reveal";
 import { site } from "./lib/site";
 
-// Fraunces carries the personality: a soft, slightly wonky serif.
-// `SOFT` and `WONK` axes are what keep it from reading as a stiff book face.
-const fraunces = Fraunces({
+const inter = Inter({
   subsets: ["latin"],
-  weight: "variable",
-  axes: ["SOFT", "WONK", "opsz"],
-  variable: "--font-display",
-  display: "swap",
-});
-
-const outfit = Outfit({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-body",
+  variable: "--font-sans",
   display: "swap",
 });
 
@@ -53,7 +42,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${fraunces.variable} ${outfit.variable}`}>
+    <html lang="en" className={inter.variable}>
       <body className="font-sans">
         <a
           href="#main"

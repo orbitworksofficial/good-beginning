@@ -93,7 +93,6 @@ export const programs = [
     blurb:
       "Gentle, attentive care for our youngest learners, with plenty of cuddles, tummy time, and early sensory play.",
     image: "/images/insta-4.jpg",
-    color: "periwinkle",
   },
   {
     name: "Toddlers",
@@ -101,7 +100,6 @@ export const programs = [
     blurb:
       "Busy hands and growing vocabularies. Toddlers explore, build, sing, and start learning to play alongside friends.",
     image: "/images/classroom-circle.png",
-    color: "coral",
   },
   {
     name: "Preschool",
@@ -109,7 +107,6 @@ export const programs = [
     blurb:
       "Reading readiness, early math, science, and the arts, all delivered through hands-on discovery and creative play.",
     image: "/images/insta-3.jpg",
-    color: "sky",
   },
   {
     name: "Kindergarten",
@@ -117,15 +114,13 @@ export const programs = [
     blurb:
       "A confident bridge into elementary school, built on milestones, independence, and a genuine love of learning.",
     image: "/images/insta-1.jpg",
-    color: "leaf",
   },
   {
     name: "Before & After School",
     age: "School-age care",
     blurb:
       "A warm, supervised place to land before the bell and after dismissal, with homework help and time to unwind.",
-    image: "/images/classroom-hands.jpg",
-    color: "coral",
+    image: "/images/kids-art.jpg",
   },
   {
     name: "Summer Program",
@@ -133,7 +128,6 @@ export const programs = [
     blurb:
       "Summer days packed with outdoor play, art, water fun, and themed weeks that keep curious minds busy.",
     image: "/images/insta-2.jpg",
-    color: "periwinkle",
   },
 ];
 
@@ -142,25 +136,21 @@ export const classrooms = [
     name: "Infant Classroom",
     age: "6 weeks to 18 months",
     detail: "Individualized care and a calm, nurturing space.",
-    swatch: "bg-jade",
   },
   {
     name: "Purple Classroom",
     age: "18 months to 3 years",
     detail: "Nine students and two teachers.",
-    swatch: "bg-berry",
   },
   {
     name: "Pink Classroom",
     age: "3 to 4 years",
     detail: "Six students, one full-time and one part-time teacher.",
-    swatch: "bg-bubblegum",
   },
   {
     name: "Blue Classroom",
     age: "4 to 5 years",
     detail: "Nine students, one full-time and one part-time teacher.",
-    swatch: "bg-periwinkle",
   },
 ];
 

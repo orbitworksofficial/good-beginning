@@ -1,45 +1,35 @@
 import Link from "next/link";
 import { site } from "../lib/site";
-import { ArrowIcon } from "./Icons";
-import { BlockStack, RainbowArc } from "./Decor";
 
 export default function CtaBand({
-  title = "Let's witness the growth and transformation of your child",
-  body = "Reach out to us now to learn more about our programs and schedule a tour.",
+  title = "Schedule a visit to Good Beginnings",
+  body = "Reach out to learn more about our programs and arrange a tour of our classrooms.",
 }: {
   title?: string;
   body?: string;
 }) {
   return (
-    <section className="section">
-      <div className="container-x">
-        <div className="reveal relative overflow-hidden rounded-block-lg border-[3px] border-ink bg-berry px-6 py-16 sm:px-12 sm:py-20"
-          style={{ boxShadow: "10px 10px 0 0 #2A2140" }}
-        >
-          <div className="pointer-events-none absolute inset-0 bg-dots opacity-[0.18]" />
-
-          <RainbowArc
-            className="pointer-events-none absolute -left-16 -top-10 h-44 w-72 opacity-25"
-            strokeWidth={18}
-          />
-          <BlockStack className="pointer-events-none absolute -bottom-6 right-4 hidden h-40 w-40 opacity-90 sm:block" />
-
-          <div className="relative mx-auto max-w-2xl text-center">
-            <h2 className="font-display text-display-sm font-black text-white sm:text-[2.75rem]">
-              {title}
-            </h2>
-            <p className="mx-auto mt-5 max-w-lg text-base leading-relaxed text-white/85 sm:text-lg">
+    <section className="relative overflow-hidden bg-coral-dark">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(238,130,86,0.85),transparent_62%)]"
+      />
+      <div className="container-x relative py-14 sm:py-16">
+        <div className="reveal flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-center">
+          <div className="max-w-xl">
+            <h2 className="text-h2 font-semibold text-white">{title}</h2>
+            <p className="mt-3 text-base leading-relaxed text-white/80">
               {body}
             </p>
-            <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Link href="/enroll" className="btn-sunshine w-full sm:w-auto">
-                Schedule a Tour
-                <ArrowIcon />
-              </Link>
-              <a href={site.phoneHref} className="btn-secondary w-full sm:w-auto">
-                Call {site.phone}
-              </a>
-            </div>
+          </div>
+
+          <div className="flex flex-col gap-3 sm:flex-row lg:shrink-0">
+            <Link href="/enroll" className="btn-light">
+              Schedule a Tour
+            </Link>
+            <a href={site.phoneHref} className="btn-outline-light">
+              Call {site.phone}
+            </a>
           </div>
         </div>
       </div>

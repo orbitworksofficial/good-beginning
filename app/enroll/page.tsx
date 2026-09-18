@@ -12,13 +12,6 @@ export const metadata: Metadata = {
     "Enroll at Good Beginnings in Laurel, MD. Complete the Initial Interest Form, schedule a tour, and reserve your child's spot. Call 301-776-6670.",
 };
 
-const STEP_CAP = ["bg-tomato", "bg-sunshine", "bg-jade"];
-const STEP_BADGE = [
-  "bg-tomato text-white",
-  "bg-sunshine text-ink",
-  "bg-jade text-white",
-];
-
 export default function EnrollPage() {
   return (
     <>
@@ -26,35 +19,27 @@ export default function EnrollPage() {
         eyebrow="Enroll"
         title="To enroll at Good Beginnings"
         body={`Please complete the Initial Interest Form, call ${site.phone}, or email ${site.email} to contact us, schedule a tour, and reserve your spot.`}
-        underline="Good Beginnings"
       />
 
       {/* Steps */}
       <section className="section">
         <div className="container-x">
-          <ol className="grid gap-7 md:grid-cols-3">
+          <ol className="grid gap-6 md:grid-cols-3">
             {enrollSteps.map((s, i) => (
               <li
                 key={s.step}
-                className={`block-card block-card-hover reveal overflow-hidden ${
-                  i === 1 ? "md:mt-8" : ""
-                }`}
-                style={{ transitionDelay: `${i * 100}ms` }}
+                className="card reveal p-7"
+                style={{ transitionDelay: `${i * 80}ms` }}
               >
-                <div className={`block-cap ${STEP_CAP[i]}`} />
-                <div className="p-8">
-                  <span
-                    className={`grid h-12 w-12 place-items-center rounded-block border-[3px] border-ink font-display text-lg font-black ${STEP_BADGE[i]}`}
-                  >
-                    {i + 1}
-                  </span>
-                  <h2 className="mt-5 font-display text-xl font-bold text-ink">
-                    {s.title}
-                  </h2>
-                  <p className="mt-3 text-sm leading-relaxed text-ink/70">
-                    {s.body}
-                  </p>
-                </div>
+                <span className="grid h-9 w-9 place-items-center rounded-full bg-coral text-sm font-semibold text-white">
+                  {i + 1}
+                </span>
+                <h2 className="mt-4 text-base font-semibold text-navy">
+                  {s.title}
+                </h2>
+                <p className="mt-2 text-sm leading-relaxed text-slate-600">
+                  {s.body}
+                </p>
               </li>
             ))}
           </ol>
@@ -62,32 +47,28 @@ export default function EnrollPage() {
       </section>
 
       {/* Interest form */}
-      <section className="section border-y-[3px] border-ink bg-sand">
-        <div className="container-x grid gap-14 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16">
+      <section className="section border-y border-coral-light bg-coral-tint">
+        <div className="container-x grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16">
           <div>
             <SectionHeading
               eyebrow="Initial interest form"
               title="Tell us about your family"
               body="Send us a few details and we will get back to you about openings, tours, and next steps."
-              underline="your family"
             />
 
-            <div
-              className="reveal mt-10 -rotate-1 overflow-hidden rounded-block-lg border-[3px] border-ink bg-white p-2.5"
-              style={{ boxShadow: "8px 8px 0 0 #2A2140" }}
-            >
+            <div className="reveal mt-8 overflow-hidden rounded-xl shadow-card">
               <Image
                 src="/images/classroom-room.jpg"
                 alt="A bright, welcoming classroom at Good Beginnings"
                 width={900}
                 height={600}
-                className="h-full w-full rounded-[0.9rem] object-cover"
+                className="h-full w-full object-cover"
               />
             </div>
 
-            <div className="reveal mt-8 rounded-block border-[3px] border-ink bg-sunshine p-6 shadow-pop-sm">
-              <h3 className="font-display text-lg font-bold text-ink">Hours</h3>
-              <p className="mt-2 text-sm font-semibold text-ink/75">
+            <div className="reveal mt-6 rounded-xl border border-slate-200 bg-white p-6">
+              <h3 className="text-sm font-semibold text-navy">Hours</h3>
+              <p className="mt-2 text-sm text-slate-600">
                 {site.hours.days}
                 <br />
                 {site.hours.weekdays}
@@ -100,8 +81,7 @@ export default function EnrollPage() {
               action={`mailto:${site.email}`}
               method="post"
               encType="text/plain"
-              className="rounded-block-lg border-[3px] border-ink bg-white p-7 sm:p-9"
-              style={{ boxShadow: "10px 10px 0 0 #2A2140" }}
+              className="rounded-xl border border-slate-200 bg-white p-7 shadow-card sm:p-8"
             >
               <div className="grid gap-5 sm:grid-cols-2">
                 <Field label="Parent / guardian name" name="parentName" required />
@@ -117,7 +97,7 @@ export default function EnrollPage() {
                 <label htmlFor="program" className="label">
                   Program of interest
                 </label>
-                <select id="program" name="program" className="field mt-2">
+                <select id="program" name="program" className="field mt-1.5">
                   <option>Infant (6 weeks – 18 months)</option>
                   <option>Toddlers (18 – 36 months)</option>
                   <option>Preschool (3 – 5 years)</option>
@@ -135,24 +115,24 @@ export default function EnrollPage() {
                   id="message"
                   name="message"
                   rows={4}
-                  className="field mt-2 resize-y"
+                  className="field mt-1.5 resize-y"
                   placeholder="Preferred start date, tour availability, questions…"
                 />
               </div>
 
-              <button type="submit" className="btn-primary mt-7 w-full">
+              <button type="submit" className="btn-primary mt-6 w-full">
                 Send my interest form
               </button>
 
-              <p className="mt-5 text-center text-xs leading-relaxed text-ink/60">
+              <p className="mt-4 text-center text-xs leading-relaxed text-slate-500">
                 Prefer to talk? Call{" "}
-                <a href={site.phoneHref} className="font-bold text-berry underline">
+                <a href={site.phoneHref} className="font-medium text-coral underline">
                   {site.phone}
                 </a>{" "}
                 or email{" "}
                 <a
                   href={`mailto:${site.email}`}
-                  className="font-bold text-berry underline"
+                  className="font-medium text-coral underline"
                 >
                   {site.email}
                 </a>
@@ -170,27 +150,19 @@ export default function EnrollPage() {
             eyebrow="Our classrooms"
             title="Where your child would spend their day"
             align="center"
-            underline="their day"
           />
-          <ul className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {classrooms.map((c, i) => (
               <li
                 key={c.name}
-                className={`block-card block-card-hover reveal overflow-hidden ${
-                  i % 2 === 1 ? "lg:mt-6" : ""
-                }`}
-                style={{ transitionDelay: `${i * 80}ms` }}
+                className="card card-hover reveal p-6"
+                style={{ transitionDelay: `${i * 70}ms` }}
               >
-                <div className={`block-cap ${c.swatch}`} />
-                <div className="p-6">
-                  <h3 className="font-display text-base font-bold text-ink">
-                    {c.name}
-                  </h3>
-                  <p className="mt-2 flex items-start gap-2 text-sm font-semibold text-ink/70">
-                    <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-jade" />
-                    {c.age}
-                  </p>
-                </div>
+                <h3 className="text-sm font-semibold text-navy">{c.name}</h3>
+                <p className="mt-2 flex items-start gap-2 text-sm text-slate-600">
+                  <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-coral" />
+                  {c.age}
+                </p>
               </li>
             ))}
           </ul>
@@ -220,14 +192,14 @@ function Field({
     <div>
       <label htmlFor={name} className="label">
         {label}
-        {required ? <span className="text-tomato"> *</span> : null}
+        {required ? <span className="text-coral"> *</span> : null}
       </label>
       <input
         id={name}
         name={name}
         type={type}
         required={required}
-        className="field mt-2"
+        className="field mt-1.5"
       />
     </div>
   );

@@ -28,47 +28,36 @@ Everything editable is in **`app/lib/site.ts`** — business details, programs,
 classrooms, staff names, enrollment steps and all body copy. Change it there and it
 updates across every page. No CMS or database required.
 
-## Design system — "building blocks"
+## Design system
 
-The whole visual language is derived from the logo: **stacked painted toy blocks
-under a rainbow arc**. Three rules make it cohesive:
+Clean and professional, in a warm peach-and-coral palette.
 
-1. **Everything is a block.** Cards, buttons, inputs, badges and stats all use a
-   `3px` ink outline with a hard offset shadow (never a soft blur). Cards carry a
-   coloured "cap" bar on top so they read as physical blocks.
-2. **Nothing is perfectly aligned.** Grids stagger (`lg:mt-8`), photos tilt 1–2°,
-   and the eyebrow labels sit at `-1°`, like taped-up paper.
-3. **Colour is playful, ink is constant.** Every outline and shadow is the same
-   `ink` (`#2A2140`); the fills rotate through the block palette.
-
-Key utility classes live in `app/globals.css`: `.block-card`, `.block-cap`,
-`.btn-primary`, `.eyebrow`, `.field`.
+- **Full-bleed hero.** The homepage opens on a large classroom photograph that
+  fills the viewport (min 34rem, 42rem on desktop), with a warm gradient scrim
+  that is dark on the left so the headline stays legible and clears toward the
+  right so the room itself is still visible.
+- **Coral** is the single accent: buttons, links, icons, active nav, numbered
+  steps. There is no second competing accent colour.
+- Sections alternate **white** and a soft **peach tint** so the page has rhythm.
+- Cards are white with a light warm border and a soft shadow.
 
 ### Palette
 
-Recovered from the original Elementor kit (`elementor_active_kit`, post ID 10),
-then saturated so it reads like painted blocks:
+| Token         | Hex       | Use                                  |
+| ------------- | --------- | ------------------------------------ |
+| `coral`       | `#E2673C` | Buttons, links, icons, accents       |
+| `coral-dark`  | `#C4512B` | Button hover, CTA band               |
+| `coral-light` | `#FDE8DC` | Borders, icon chips                  |
+| `coral-tint`  | `#FFF4EE` | Alternating section backgrounds      |
+| `navy`        | `#3D2B24` | Headings (warm brown-black)          |
+| `slate-600`   | `#6B564C` | Body copy                            |
 
-| Token        | Hex       | Use                             |
-| ------------ | --------- | ------------------------------- |
-| `ink`        | `#2A2140` | Every outline, shadow, body text|
-| `tomato`     | `#EE3524` | Primary buttons                 |
-| `sunshine`   | `#F9D616` | Eyebrows, highlights, squiggles |
-| `berry`      | `#7B2FF2` | Accent words, CTA band          |
-| `jade`       | `#4FB59B` | Checkmarks, caps                |
-| `bubblegum`  | `#F08FC8` | Caps, avatars                   |
-| `cream`      | `#FBF3EC` | Page background                 |
-| `sand`       | `#F4E4D6` | Alternating sections            |
+Neutrals are warm-toned rather than blue-grey so they sit comfortably on peach.
 
 ### Type
 
-**Fraunces** for display — a soft, slightly wonky serif, loaded as a variable font
-with the `SOFT` and `WONK` axes turned up (see `.font-display` in `globals.css`).
-That wonk is what stops it reading like a generic template.
-**Outfit** for body copy. Both self-hosted via `next/font`.
-
-Decorative SVG motifs (rainbow arc, block stack, squiggle, block dots) live in
-`app/components/Decor.tsx` and are all `aria-hidden`.
+**Inter** throughout, at two weights — `font-semibold` for headings and
+`font-normal` for body. One family keeps it clean and highly legible.
 
 ## Images
 
