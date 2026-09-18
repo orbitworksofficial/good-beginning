@@ -1,0 +1,157 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-cream text-ink antialiased;
+  }
+
+  /* Fraunces variable axes: soft corners + a little wonk = personality. */
+  .font-display {
+    font-variation-settings: "SOFT" 60, "WONK" 1;
+  }
+
+  ::selection {
+    @apply bg-sunshine text-ink;
+  }
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
+  }
+
+  /* ---------- Buttons: chunky, pressable blocks ---------- */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-block border-[3px]
+           border-ink px-7 py-3.5 text-sm font-bold transition-all duration-150
+           focus:outline-none focus-visible:ring-4 focus-visible:ring-sunshine;
+  }
+
+  .btn-primary {
+    @apply btn bg-tomato text-white shadow-pop-sm
+           hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-pop
+           active:translate-x-1 active:translate-y-1 active:shadow-none;
+  }
+
+  .btn-secondary {
+    @apply btn bg-white text-ink shadow-pop-sm
+           hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-pop
+           active:translate-x-1 active:translate-y-1 active:shadow-none;
+  }
+
+  .btn-sunshine {
+    @apply btn bg-sunshine text-ink shadow-pop-sm
+           hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-pop
+           active:translate-x-1 active:translate-y-1 active:shadow-none;
+  }
+
+  .section {
+    @apply py-20 sm:py-28;
+  }
+
+  /* ---------- Eyebrow: a small tilted label, like a name tag ---------- */
+  .eyebrow {
+    @apply inline-flex -rotate-1 items-center gap-2 rounded-lg border-[3px] border-ink
+           bg-sunshine px-4 py-1.5 text-xs font-extrabold uppercase
+           tracking-[0.14em] text-ink shadow-pop-sm;
+  }
+
+  .h-section {
+    @apply font-display text-display-sm font-black sm:text-[2.75rem] lg:text-display-md;
+  }
+
+  /* ---------- The block card: thick outline + hard shadow ---------- */
+  .block-card {
+    @apply relative rounded-block-lg border-[3px] border-ink bg-white
+           transition-all duration-200;
+    box-shadow: 6px 6px 0 0 theme("colors.ink");
+  }
+
+  .block-card-hover {
+    @apply hover:-translate-x-1 hover:-translate-y-1;
+  }
+
+  .block-card-hover:hover {
+    box-shadow: 10px 10px 0 0 theme("colors.ink");
+  }
+
+  /* The colored cap that makes a card read as a stacked block. */
+  .block-cap {
+    @apply h-3.5 w-full rounded-t-[0.9rem] border-b-[3px] border-ink;
+  }
+
+  /* ---------- Inputs styled as blocks ---------- */
+  .field {
+    @apply w-full rounded-block border-[3px] border-ink bg-white px-4 py-3
+           text-sm font-medium text-ink outline-none transition
+           placeholder:text-ink/40 focus:ring-4 focus:ring-sunshine;
+  }
+
+  .label {
+    @apply block text-sm font-bold text-ink;
+  }
+}
+
+@layer utilities {
+  /* Subtle dotted texture, like construction paper. */
+  .bg-dots {
+    background-image: radial-gradient(
+      theme("colors.ink / 12%") 1.5px,
+      transparent 1.5px
+    );
+    background-size: 22px 22px;
+  }
+
+  .bg-grid-blocks {
+    background-image:
+      linear-gradient(theme("colors.ink / 6%") 3px, transparent 3px),
+      linear-gradient(90deg, theme("colors.ink / 6%") 3px, transparent 3px);
+    background-size: 64px 64px;
+  }
+
+  .text-stroke-ink {
+    -webkit-text-stroke: 2px theme("colors.ink");
+  }
+}
+
+/* Reveal-on-scroll, progressively enhanced.
+   Content is visible by default so it can never be lost to a failed observer,
+   a crawler, or a print. Only once JS marks the document as reveal-ready do we
+   hide the not-yet-seen elements and animate them in. */
+.reveal-ready .reveal:not(.is-visible) {
+  opacity: 0;
+  transform: translateY(26px);
+}
+
+.reveal {
+  transition: opacity 0.6s ease-out, transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal-ready .reveal:not(.is-visible) {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
