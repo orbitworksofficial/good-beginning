@@ -8,6 +8,7 @@ import {
   enrollSteps,
   hero,
   highlights,
+  ourProgram,
   pillars,
   programs,
   site,
@@ -223,6 +224,57 @@ export default function Home() {
                   </p>
                 </div>
               </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ================= MORE THAN A PRESCHOOL ================= */}
+      <section className="section pt-0 sm:pt-0">
+        <div className="container-x grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+          <div>
+            <SectionHeading
+              eyebrow="Our program"
+              title="More than a preschool"
+              body={ourProgram.intro}
+            />
+            <ul className="reveal mt-8 grid gap-3 sm:grid-cols-2">
+              {ourProgram.groups.map((g) => (
+                <li key={g.id}>
+                  <Link
+                    href={`/our-program#${g.id}`}
+                    className="card card-hover flex items-center justify-between gap-3 px-4 py-3 text-sm font-semibold text-navy hover:text-coral"
+                  >
+                    {g.title}
+                    <ArrowIcon className="h-4 w-4 shrink-0 text-coral" />
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <div className="reveal mt-8">
+              <Link href="/our-program" className="btn-primary">
+                Explore our program
+                <ArrowIcon />
+              </Link>
+            </div>
+          </div>
+
+          <div className="reveal grid grid-cols-2 gap-4">
+            {ourProgram.groups.slice(0, 4).map((g, i) => (
+              <div
+                key={g.id}
+                className={`relative aspect-square overflow-hidden rounded-xl shadow-card ${
+                  i % 2 === 1 ? "translate-y-6" : ""
+                }`}
+              >
+                <Image
+                  src={g.image}
+                  alt={g.alt}
+                  fill
+                  sizes="(max-width: 1024px) 50vw, 25vw"
+                  className="object-cover"
+                />
+              </div>
             ))}
           </div>
         </div>

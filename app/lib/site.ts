@@ -10,7 +10,7 @@ export const site = {
   established: 1999,
   phone: "301-776-6670",
   phoneHref: "tel:+13017766670",
-  email: "info@gbeginnings.com",
+  email: "Gbinfo@gbeginnings.com",
   address: {
     street: "10473 Gorman Road",
     city: "Laurel",
@@ -31,7 +31,7 @@ export const site = {
 export const nav = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about-us" },
-  { label: "Programs", href: "/#programs" },
+  { label: "Our Program", href: "/our-program" },
   { label: "Enroll", href: "/enroll" },
   { label: "Contact Us", href: "/contact-us" },
 ];
@@ -184,7 +184,7 @@ export const enrollSteps = [
     step: "01",
     title: "Reach out",
     body:
-      "Complete the Initial Interest Form, call us at 301-776-6670, or email info@gbeginnings.com to contact us, schedule a tour, and reserve your spot.",
+      "Complete the Initial Interest Form, call us at 301-776-6670, or email Gbinfo@gbeginnings.com to contact us, schedule a tour, and reserve your spot.",
   },
   {
     step: "02",
@@ -222,3 +222,103 @@ export const whyUs = [
       "Our two directors are also the owners, and they are actively involved in the school each and every day.",
   },
 ];
+
+/** "Our Program" page — what a day at Good Beginnings includes. */
+export const ourProgram = {
+  eyebrow: "Our program",
+  title: "More than a preschool",
+  intro:
+    "At Good Beginnings, your child's day is filled with more than learning and care. We provide a well-rounded preschool experience designed to nurture the whole child — academically, socially, physically, and creatively.",
+  pillars: ["Academically", "Socially", "Physically", "Creatively"],
+  groups: [
+    {
+      id: "learn",
+      title: "Learn & Discover",
+      body: "A thoughtful, age-appropriate curriculum that turns curiosity into confidence and gets every child ready for kindergarten.",
+      image: "/images/ourimages/gb-1.jpeg",
+      alt: "A preschooler matching wooden number tiles during a math activity",
+      items: [
+        { text: "Daily age-appropriate curriculum and learning activities" },
+        { text: "Early literacy and storytime" },
+        { text: "STEM and science exploration" },
+        { text: "Sensory learning" },
+        { text: "Hands-on classroom projects" },
+        { text: "Gardening and nature exploration" },
+        { text: "School-readiness activities" },
+        { text: "Fine-motor and creative development" },
+        { text: "Social-emotional learning" },
+      ],
+    },
+    {
+      id: "move",
+      title: "Move & Grow",
+      body: "Active bodies build strong minds. Every week is full of music, movement, and time outdoors.",
+      image: "/images/ourimages/gb-5.jpeg",
+      alt: "Children climbing the dome on the Good Beginnings playground",
+      items: [
+        { emoji: "⚽", text: "Soccer Days with Coach Jake", note: "Mondays & Thursdays" },
+        { emoji: "🎵", text: "Musical Wednesdays with Boogie Bennie" },
+        { emoji: "🌳", text: "Daily outdoor play and physical activity" },
+        { emoji: "💦", text: "Splash Fridays", note: "During the summer" },
+      ],
+    },
+    {
+      id: "create",
+      title: "Create & Explore",
+      body: "Room to cook, build, perform, and imagine, with plenty of hands-on moments along the way.",
+      image: "/images/ourimages/gb-4.jpeg",
+      alt: "Children playing shop and doctor together in the classroom",
+      items: [
+        { emoji: "👩‍🍳", text: "Biweekly cooking classes" },
+        { emoji: "🎨", text: "Art and creative expression" },
+        { emoji: "🎤", text: "Show & Tell Days" },
+        { emoji: "🏪", text: "School Store experiences" },
+        { emoji: "✋", text: "Special classroom activities and hands-on experiences" },
+      ],
+    },
+    {
+      id: "beyond",
+      title: "Experiences Beyond the Classroom",
+      body: "Throughout the year, children enjoy special enrichment experiences that bring learning to life.",
+      image: "/images/ourimages/gb-2.jpeg",
+      alt: "Children in Halloween costumes celebrating outside the school",
+      items: [
+        { emoji: "✨", text: "Magic shows" },
+        { emoji: "🐐", text: "Petting zoos" },
+        { emoji: "🚌", text: "Field trips" },
+        { emoji: "👋", text: "Special visitors and interactive experiences" },
+        { emoji: "🍂", text: "Seasonal activities and celebrations" },
+        { emoji: "🎪", text: "A variety of festivals and special events" },
+        { emoji: "🎉", text: "And much more!" },
+      ],
+    },
+  ],
+  families: {
+    title: "Families are part of the journey",
+    body: "We believe children thrive when their families and teachers work together.",
+    items: [
+      {
+        emoji: "❤️",
+        title: "Monthly parent involvement",
+        body: "Regular opportunities every month to join in and be part of your child's classroom.",
+      },
+      {
+        emoji: "📝",
+        title: "Parent-teacher conferences",
+        body: "Twice a year we sit down together to talk about your child's growth and next steps.",
+      },
+      {
+        emoji: "📱",
+        title: "Brightwheel family connection",
+        body: "Daily communication, photos, videos, classroom updates, learning activities, and easy parent-teacher messaging.",
+      },
+    ],
+  },
+  closing: {
+    title: "A preschool experience that keeps growing",
+    paragraphs: [
+      "At Good Beginnings, we want every child to leave each day having learned something new, tried something different, created something special, or made a meaningful connection.",
+      "Because preschool should be more than somewhere your child goes each day — it should be a place where they learn, explore, grow, and make memories.",
+    ],
+  },
+};

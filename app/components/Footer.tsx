@@ -38,7 +38,7 @@ export default function Footer() {
           <ul className="mt-4 space-y-2.5 text-sm text-slate-600">
             {programs.map((p) => (
               <li key={p.name}>
-                <Link href="/#programs" className="transition hover:text-coral">
+                <Link href="/our-program#ages" className="transition hover:text-coral">
                   {p.name}
                 </Link>
               </li>
