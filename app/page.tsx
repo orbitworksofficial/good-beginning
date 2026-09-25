@@ -1,11 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import CtaBand from "./components/CtaBand";
+import PhotoDeck from "./components/PhotoDeck";
 import SectionHeading from "./components/SectionHeading";
 import { ArrowIcon, CheckIcon, iconMap } from "./components/Icons";
 import {
   about,
   enrollSteps,
+  gallery,
   hero,
   highlights,
   ourProgram,
@@ -143,25 +145,8 @@ export default function Home() {
       {/* ================= ABOUT ================= */}
       <section className="section border-y border-coral-light bg-coral-tint">
         <div className="container-x grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-          <div className="reveal order-2 grid grid-cols-2 gap-4 lg:order-1">
-            <div className="overflow-hidden rounded-xl shadow-card">
-              <Image
-                src="/images/child-play.jpg"
-                alt="A child playing at Good Beginnings"
-                width={600}
-                height={800}
-                className="h-full w-full object-cover"
-              />
-            </div>
-            <div className="mt-8 overflow-hidden rounded-xl shadow-card">
-              <Image
-                src="/images/kids-art.jpg"
-                alt="Children working on an art activity"
-                width={600}
-                height={800}
-                className="h-full w-full object-cover"
-              />
-            </div>
+          <div className="reveal order-2 lg:order-1">
+            <PhotoDeck photos={gallery} />
           </div>
 
           <div className="order-1 lg:order-2">
@@ -196,19 +181,19 @@ export default function Home() {
             align="center"
           />
 
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {programs.map((p, i) => (
               <article
                 key={p.name}
                 className="card card-hover reveal group overflow-hidden"
-                style={{ transitionDelay: `${(i % 3) * 70}ms` }}
+                style={{ transitionDelay: `${i * 70}ms` }}
               >
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <Image
                     src={p.image}
                     alt={`${p.name} program at Good Beginnings`}
                     fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                   />
                 </div>

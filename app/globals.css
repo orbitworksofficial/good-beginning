@@ -114,3 +114,13 @@
     scroll-behavior: auto !important;
   }
 }
+
+/* PhotoDeck autoplay progress; its animationend advances the slider. */
+@keyframes deck-progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}

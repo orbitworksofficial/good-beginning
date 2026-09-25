@@ -36,6 +36,7 @@ export default {
       },
       fontFamily: {
         sans: ["var(--font-sans)", "system-ui", "sans-serif"],
+        hand: ["var(--font-hand)", "cursive"],
       },
       fontSize: {
         "h1": ["2.5rem", { lineHeight: "1.18", letterSpacing: "-0.02em" }],

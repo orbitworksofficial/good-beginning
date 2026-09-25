@@ -102,8 +102,6 @@ export default function EnrollPage() {
                   <option>Toddlers (18 – 36 months)</option>
                   <option>Preschool (3 – 5 years)</option>
                   <option>Kindergarten</option>
-                  <option>Before &amp; After School</option>
-                  <option>Summer Program</option>
                 </select>
               </div>
 

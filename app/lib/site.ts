@@ -115,20 +115,6 @@ export const programs = [
       "A confident bridge into elementary school, built on milestones, independence, and a genuine love of learning.",
     image: "/images/insta-1.jpg",
   },
-  {
-    name: "Before & After School",
-    age: "School-age care",
-    blurb:
-      "A warm, supervised place to land before the bell and after dismissal, with homework help and time to unwind.",
-    image: "/images/kids-art.jpg",
-  },
-  {
-    name: "Summer Program",
-    age: "Seasonal enrollment",
-    blurb:
-      "Summer days packed with outdoor play, art, water fun, and themed weeks that keep curious minds busy.",
-    image: "/images/insta-2.jpg",
-  },
 ];
 
 export const classrooms = [
@@ -322,3 +308,16 @@ export const ourProgram = {
     ],
   },
 };
+
+/** Home page "Who we are" photo slider (public/images/slider). */
+export const gallery = [
+  { src: "/images/slider/slide-9.jpeg", caption: "Storytime on the rug", alt: "A teacher reading a picture book to preschoolers gathered on the rug" },
+  { src: "/images/slider/slide-1.jpeg", caption: "Musical Wednesdays", alt: "Preschoolers singing along with a visiting musician playing a ukulele" },
+  { src: "/images/slider/slide-5.jpeg", caption: "Sandbox builders", alt: "Toddlers digging with shovels in the playground sandbox" },
+  { src: "/images/slider/slide-7.jpeg", caption: "Busy little hands", alt: "Children at a classroom table decorating letter shapes" },
+  { src: "/images/slider/slide-2.jpeg", caption: "Songs in the infant room", alt: "Infants sitting on an alphabet rug while a teacher plays guitar" },
+  { src: "/images/slider/slide-8.jpeg", caption: "Running, laughing, playing", alt: "Toddlers running and laughing on the grass with a coach" },
+  { src: "/images/slider/slide-3.jpeg", caption: "Cotton-ball clouds", alt: "Toddlers making cloud pictures with cotton balls at a round table" },
+  { src: "/images/slider/slide-6.jpeg", caption: "All aboard!", alt: "Toddlers climbing on the yellow school-bus play structure" },
+  { src: "/images/slider/slide-4.jpeg", caption: "Slide time", alt: "A toddler going down the red slide on the playground" },
+];

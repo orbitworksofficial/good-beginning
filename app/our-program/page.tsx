@@ -222,7 +222,7 @@ export default function OurProgramPage() {
             title="A place for every stage"
             align="center"
           />
-          <ul className="reveal mx-auto mt-10 grid max-w-4xl gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <ul className="reveal mx-auto mt-10 grid max-w-4xl gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {programs.map((p) => (
               <li key={p.name} className="card px-5 py-4">
                 <p className="text-sm font-semibold text-navy">{p.name}</p>
