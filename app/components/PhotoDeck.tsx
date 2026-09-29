@@ -1,32 +1,26 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 
 type Photo = { src: string; caption: string; alt: string };
 
-const AUTOPLAY_MS = 5000;
+const AUTOPLAY_MS = 3000;
 
 /**
  * A stack of printed photos. The top print flies off to reveal the next one,
  * and the next two peek out behind it at playful angles.
  *
  * Autoplay is driven by the progress bar's CSS animation (its `animationend`
- * advances the deck), so pausing on hover/focus is just pausing the animation.
- * With reduced motion there is no autoplay; the arrows and dots still work.
+ * advances the deck), so pausing on hover or keyboard focus is just pausing
+ * the animation. `.motion-timer` keeps that timer running under reduced
+ * motion; only the card movement is dropped there.
  */
 export default function PhotoDeck({ photos }: { photos: Photo[] }) {
   const n = photos.length;
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
-  const [autoplay, setAutoplay] = useState(false);
   const pointerX = useRef<number | null>(null);
-
-  useEffect(() => {
-    setAutoplay(
-      !window.matchMedia("(prefers-reduced-motion: reduce)").matches,
-    );
-  }, []);
 
   const go = (step: number) => setIndex((i) => (i + step + n) % n);
 
@@ -38,7 +32,11 @@ export default function PhotoDeck({ photos }: { photos: Photo[] }) {
       className="relative mx-auto w-full max-w-md select-none overflow-x-clip px-6 pb-2 pt-6"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
-      onFocus={() => setPaused(true)}
+      // Only keyboard focus pauses; a mouse click on the arrows must not
+      // leave the deck stuck on pause.
+      onFocus={(e) => {
+        if (e.target.matches(":focus-visible")) setPaused(true);
+      }}
       onBlur={(e) => {
         if (!e.currentTarget.contains(e.relatedTarget)) setPaused(false);
       }}
@@ -135,14 +133,13 @@ export default function PhotoDeck({ photos }: { photos: Photo[] }) {
                   <span
                     // Re-keyed on every slide change so the bar restarts.
                     key={index}
-                    className="absolute inset-y-0 left-0 w-full origin-left rounded-full bg-coral"
+                    className="motion-timer absolute inset-y-0 left-0 w-full origin-left scale-x-0 rounded-full bg-coral"
                     style={
-                      autoplay
-                        ? {
-                            animation: `deck-progress ${AUTOPLAY_MS}ms linear forwards`,
-                            animationPlayState: paused ? "paused" : "running",
-                          }
-                        : undefined
+                      {
+                        "--timer": `${AUTOPLAY_MS}ms`,
+                        animation: `deck-progress ${AUTOPLAY_MS}ms linear forwards`,
+                        animationPlayState: paused ? "paused" : "running",
+                      } as React.CSSProperties
                     }
                     onAnimationEnd={() => go(1)}
                   />
@@ -162,7 +159,7 @@ export default function PhotoDeck({ photos }: { photos: Photo[] }) {
         </button>
       </div>
 
-      <p className="sr-only" aria-live={paused || !autoplay ? "polite" : "off"}>
+      <p className="sr-only" aria-live={paused ? "polite" : "off"}>
         Photo {index + 1} of {n}: {photos[index].caption}
       </p>
     </div>

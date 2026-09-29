@@ -24,6 +24,10 @@ export const site = {
     weekdays: "7:00 am – 6:00 pm",
     days: "Monday – Friday",
   },
+  social: {
+    facebook: "https://www.facebook.com/share/r/1P4Z7S9cik/",
+    instagram: "https://www.instagram.com/p/DdWxcOFkdxS/",
+  },
   mapsUrl:
     "https://www.google.com/maps/search/?api=1&query=10473+Gorman+Road+Laurel+MD+20723",
 };
@@ -107,13 +111,6 @@ export const programs = [
     blurb:
       "Reading readiness, early math, science, and the arts, all delivered through hands-on discovery and creative play.",
     image: "/images/insta-3.jpg",
-  },
-  {
-    name: "Kindergarten",
-    age: "Kindergarten readiness",
-    blurb:
-      "A confident bridge into elementary school, built on milestones, independence, and a genuine love of learning.",
-    image: "/images/insta-1.jpg",
   },
 ];
 
@@ -311,13 +308,16 @@ export const ourProgram = {
 
 /** Home page "Who we are" photo slider (public/images/slider). */
 export const gallery = [
-  { src: "/images/slider/slide-9.jpeg", caption: "Storytime on the rug", alt: "A teacher reading a picture book to preschoolers gathered on the rug" },
-  { src: "/images/slider/slide-1.jpeg", caption: "Musical Wednesdays", alt: "Preschoolers singing along with a visiting musician playing a ukulele" },
-  { src: "/images/slider/slide-5.jpeg", caption: "Sandbox builders", alt: "Toddlers digging with shovels in the playground sandbox" },
+  { src: "/images/slider/slide-9.jpeg", landscape: true, caption: "Storytime on the rug", alt: "A teacher reading a picture book to preschoolers gathered on the rug" },
+  { src: "/images/slider/slide-1.jpeg", landscape: true, caption: "Musical Wednesdays", alt: "Preschoolers singing along with a visiting musician playing a ukulele" },
+  { src: "/images/slider/slide-5.jpeg", landscape: true, caption: "Sandbox builders", alt: "Toddlers digging with shovels in the playground sandbox" },
   { src: "/images/slider/slide-7.jpeg", caption: "Busy little hands", alt: "Children at a classroom table decorating letter shapes" },
-  { src: "/images/slider/slide-2.jpeg", caption: "Songs in the infant room", alt: "Infants sitting on an alphabet rug while a teacher plays guitar" },
-  { src: "/images/slider/slide-8.jpeg", caption: "Running, laughing, playing", alt: "Toddlers running and laughing on the grass with a coach" },
+  { src: "/images/slider/slide-2.jpeg", landscape: true, caption: "Songs in the infant room", alt: "Infants sitting on an alphabet rug while a teacher plays guitar" },
+  { src: "/images/slider/slide-8.jpeg", landscape: true, caption: "Running, laughing, playing", alt: "Toddlers running and laughing on the grass with a coach" },
   { src: "/images/slider/slide-3.jpeg", caption: "Cotton-ball clouds", alt: "Toddlers making cloud pictures with cotton balls at a round table" },
   { src: "/images/slider/slide-6.jpeg", caption: "All aboard!", alt: "Toddlers climbing on the yellow school-bus play structure" },
   { src: "/images/slider/slide-4.jpeg", caption: "Slide time", alt: "A toddler going down the red slide on the playground" },
 ];
+
+/** Wide photos only: portrait shots crop badly in the full-width hero. */
+export const heroSlides = gallery.filter((g) => "landscape" in g);

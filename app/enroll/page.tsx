@@ -101,7 +101,6 @@ export default function EnrollPage() {
                   <option>Infant (6 weeks – 18 months)</option>
                   <option>Toddlers (18 – 36 months)</option>
                   <option>Preschool (3 – 5 years)</option>
-                  <option>Kindergarten</option>
                 </select>
               </div>
 

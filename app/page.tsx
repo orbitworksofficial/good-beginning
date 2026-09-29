@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import CtaBand from "./components/CtaBand";
+import HeroSlider from "./components/HeroSlider";
 import PhotoDeck from "./components/PhotoDeck";
 import SectionHeading from "./components/SectionHeading";
 import { ArrowIcon, CheckIcon, iconMap } from "./components/Icons";
@@ -9,6 +10,7 @@ import {
   enrollSteps,
   gallery,
   hero,
+  heroSlides,
   highlights,
   ourProgram,
   pillars,
@@ -22,15 +24,8 @@ export default function Home() {
     <>
       {/* ================= HERO ================= */}
       <section className="relative isolate overflow-hidden">
-        {/* Full-bleed photograph */}
-        <Image
-          src="/images/classroom-hands.jpg"
-          alt="Children raising their hands during class at Good Beginnings"
-          fill
-          priority
-          sizes="100vw"
-          className="-z-20 object-cover object-center"
-        />
+        {/* Full-bleed photo slider */}
+        <HeroSlider slides={heroSlides} />
 
         {/* Warm scrim: dark on the left so the copy stays legible, clearing to
             the right so the classroom itself is still visible. */}
@@ -43,7 +38,7 @@ export default function Home() {
           className="absolute inset-0 -z-10 bg-gradient-to-t from-navy-dark/60 via-transparent to-transparent"
         />
 
-        <div className="container-x flex min-h-[34rem] items-center py-16 sm:py-20 lg:min-h-[42rem]">
+        <div className="container-x flex min-h-[34rem] items-center pb-32 pt-16 sm:pt-20 lg:pb-20 lg:min-h-[42rem]">
           <div className="reveal max-w-2xl">
             <p className="inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-white ring-1 ring-inset ring-white/25 backdrop-blur-sm">
               {hero.eyebrow}
@@ -181,7 +176,7 @@ export default function Home() {
             align="center"
           />
 
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
             {programs.map((p, i) => (
               <article
                 key={p.name}
@@ -193,7 +188,7 @@ export default function Home() {
                     src={p.image}
                     alt={`${p.name} program at Good Beginnings`}
                     fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    sizes="(max-width: 768px) 100vw, 33vw"
                     className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                   />
                 </div>

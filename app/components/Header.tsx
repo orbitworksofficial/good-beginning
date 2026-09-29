@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { nav, site } from "../lib/site";
+import { FacebookIcon, InstagramIcon } from "./Icons";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -42,6 +43,26 @@ export default function Header() {
             >
               {site.email}
             </a>
+            <span className="flex items-center gap-3 border-l border-slate-300 pl-6">
+              <a
+                href={site.social.facebook}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Good Beginnings on Facebook"
+                className="transition hover:text-coral"
+              >
+                <FacebookIcon className="h-4 w-4" />
+              </a>
+              <a
+                href={site.social.instagram}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Good Beginnings on Instagram"
+                className="transition hover:text-coral"
+              >
+                <InstagramIcon className="h-4 w-4" />
+              </a>
+            </span>
           </div>
         </div>
       </div>

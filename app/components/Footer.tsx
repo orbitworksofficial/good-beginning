@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { nav, programs, site } from "../lib/site";
+import { FacebookIcon, InstagramIcon } from "./Icons";
 
 export default function Footer() {
   return (
@@ -18,6 +19,26 @@ export default function Footer() {
             A safe, caring, and engaging place to learn, grow, and explore —
             trusted by Laurel families since {site.established}.
           </p>
+          <div className="mt-5 flex gap-3">
+            <a
+              href={site.social.facebook}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Good Beginnings on Facebook"
+              className="grid h-10 w-10 place-items-center rounded-full border border-slate-300 bg-white text-navy transition hover:border-coral hover:bg-coral hover:text-white"
+            >
+              <FacebookIcon />
+            </a>
+            <a
+              href={site.social.instagram}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Good Beginnings on Instagram"
+              className="grid h-10 w-10 place-items-center rounded-full border border-slate-300 bg-white text-navy transition hover:border-coral hover:bg-coral hover:text-white"
+            >
+              <InstagramIcon />
+            </a>
+          </div>
         </div>
 
         <div>

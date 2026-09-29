@@ -124,3 +124,22 @@
     transform: scaleX(1);
   }
 }
+
+/* HeroSlider countdown ring; its animationend advances the hero. */
+@keyframes ring-progress {
+  from {
+    stroke-dashoffset: var(--ring);
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Slider timers are clocks, not decoration: keep their real duration even
+   when the blanket reduced-motion rule above shrinks every animation to
+   ~0ms (which would otherwise make the sliders skip through every slide). */
+@media (prefers-reduced-motion: reduce) {
+  .motion-timer {
+    animation-duration: var(--timer) !important;
+  }
+}
