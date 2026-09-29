@@ -25,8 +25,8 @@ export const site = {
     days: "Monday – Friday",
   },
   social: {
-    facebook: "https://www.facebook.com/share/r/1P4Z7S9cik/",
-    instagram: "https://www.instagram.com/p/DdWxcOFkdxS/",
+    facebook: "https://www.facebook.com/profile.php?id=61594241469272",
+    instagram: "https://www.instagram.com/gbeginningsmd/",
   },
   mapsUrl:
     "https://www.google.com/maps/search/?api=1&query=10473+Gorman+Road+Laurel+MD+20723",
