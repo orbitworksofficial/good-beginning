@@ -96,14 +96,14 @@ export const programs = [
     age: "6 weeks to 18 months",
     blurb:
       "Gentle, attentive care for our youngest learners, with plenty of cuddles, tummy time, and early sensory play.",
-    image: "/images/insta-4.jpg",
+    image: "/images/infant.jpeg",
   },
   {
     name: "Toddlers",
     age: "18 months to 36 months",
     blurb:
       "Busy hands and growing vocabularies. Toddlers explore, build, sing, and start learning to play alongside friends.",
-    image: "/images/classroom-circle.png",
+    image: "/images/toddler.jpeg",
   },
   {
     name: "Preschool",
@@ -126,12 +126,12 @@ export const classrooms = [
     detail: "Nine students and two teachers.",
   },
   {
-    name: "Pink Classroom",
+    name: "Blue Classroom",
     age: "3 to 4 years",
     detail: "Six students, one full-time and one part-time teacher.",
   },
   {
-    name: "Blue Classroom",
+    name: "Pink Classroom",
     age: "4 to 5 years",
     detail: "Nine students, one full-time and one part-time teacher.",
   },
@@ -158,7 +158,7 @@ export const about = {
     { value: "25+", label: "Years serving families" },
     { value: "30", label: "Students each year" },
     { value: "4", label: "Thoughtful classrooms" },
-    { value: "6wk–5yr", label: "Ages welcomed" },
+    { value: "6wks–5yrs", label: "Ages welcomed" },
   ],
 };
 

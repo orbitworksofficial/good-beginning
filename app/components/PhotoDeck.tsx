@@ -77,7 +77,7 @@ export default function PhotoDeck({ photos }: { photos: Photo[] }) {
               aria-roledescription="slide"
               aria-label={`${i + 1} of ${n}`}
               aria-hidden={!top}
-              className="absolute inset-0 rounded-md bg-white p-3 pb-14 shadow-[0_2px_4px_rgba(42,29,24,0.08),0_18px_40px_-12px_rgba(42,29,24,0.35)] transition-[transform,opacity] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform"
+              className="absolute inset-0 rounded-md bg-white p-3 shadow-[0_2px_4px_rgba(42,29,24,0.08),0_18px_40px_-12px_rgba(42,29,24,0.35)] transition-[transform,opacity] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform"
               style={cardStyle(offset, n)}
             >
               <div className="relative h-full w-full overflow-hidden rounded-sm bg-slate-100">
@@ -90,9 +90,6 @@ export default function PhotoDeck({ photos }: { photos: Photo[] }) {
                   className="object-cover"
                 />
               </div>
-              <figcaption className="absolute inset-x-0 bottom-0 flex h-14 items-center justify-center px-4 font-hand text-2xl text-navy">
-                {p.caption}
-              </figcaption>
               {top ? (
                 <span
                   aria-hidden="true"

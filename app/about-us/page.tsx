@@ -37,10 +37,10 @@ export default function AboutPage() {
           <div className="reveal">
             <div className="overflow-hidden rounded-xl shadow-card">
               <Image
-                src="/images/classroom-hands.jpg"
-                alt="Children raising their hands during class at Good Beginnings"
-                width={1200}
-                height={800}
+                src="/images/aboutus.jpeg"
+                alt="A teacher leading circle time with preschoolers on the classroom rug"
+                width={1000}
+                height={750}
                 className="h-full w-full object-cover"
               />
             </div>
