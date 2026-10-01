@@ -110,7 +110,7 @@ export const programs = [
     age: "3 to 5 years",
     blurb:
       "Reading readiness, early math, science, and the arts, all delivered through hands-on discovery and creative play.",
-    image: "/images/insta-3.jpg",
+    image: "/images/preschool.jpeg",
   },
 ];
 
@@ -144,6 +144,8 @@ export const staff = [
   "Fatima Diallo",
   "Jayda Stevens",
   "Saadia Khokhar",
+  "Olivia Tyfa",
+  "Sara Rashidi",
 ];
 
 export const about = {

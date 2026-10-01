@@ -3,6 +3,7 @@ import Image from "next/image";
 import CtaBand from "../components/CtaBand";
 import PageHero from "../components/PageHero";
 import SectionHeading from "../components/SectionHeading";
+import { HeartIcon } from "../components/Icons";
 import { about, classrooms, staff } from "../lib/site";
 
 export const metadata: Metadata = {
@@ -105,29 +106,39 @@ export default function AboutPage() {
             align="center"
           />
 
-          <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {staff.map((name, i) => (
-              <li
-                key={name}
-                className="card card-hover reveal flex items-center gap-4 p-5"
-                style={{ transitionDelay: `${(i % 3) * 70}ms` }}
-              >
-                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-coral-light text-sm font-semibold text-coral">
-                  {name
-                    .split(" ")
-                    .map((n) => n[0])
-                    .join("")}
-                </span>
-                <span>
-                  <span className="block text-sm font-semibold text-navy">
-                    {name}
+          <ul className="mt-14 grid grid-cols-2 gap-x-4 gap-y-5 sm:gap-x-6 sm:gap-y-8 lg:grid-cols-4">
+            {staff.map((name, i) => {
+              const tone = staffTones[i % staffTones.length];
+              return (
+                <li
+                  key={name}
+                  className="card card-hover reveal group relative overflow-hidden text-center transition-transform duration-300 hover:-translate-y-1"
+                  style={{ transitionDelay: `${(i % 4) * 70}ms` }}
+                >
+                  {/* Coloured band with a soft dot pattern */}
+                  <div
+                    aria-hidden="true"
+                    className={`h-14 sm:h-20 ${tone.band} bg-[radial-gradient(rgba(255,255,255,0.7)_1.5px,transparent_1.5px)] [background-size:14px_14px]`}
+                  />
+                  <span
+                    aria-hidden="true"
+                    className={`relative mx-auto -mt-8 grid h-16 w-16 place-items-center rounded-full bg-gradient-to-br ${tone.avatar} text-lg sm:-mt-10 sm:h-20 sm:w-20 sm:text-xl font-semibold tracking-wide text-white shadow-card-hover ring-4 ring-white transition-transform duration-300 group-hover:scale-105 group-hover:-rotate-3`}
+                  >
+                    {name
+                      .split(" ")
+                      .map((n) => n[0])
+                      .join("")}
                   </span>
-                  <span className="mt-0.5 block text-xs text-slate-500">
-                    Good Beginnings team
-                  </span>
-                </span>
-              </li>
-            ))}
+                  <div className="px-3 pb-5 pt-3 sm:px-5 sm:pb-6 sm:pt-4">
+                    <p className="text-sm font-semibold text-navy sm:text-base">{name}</p>
+                    <p className="mt-1.5 inline-flex items-center gap-1.5 text-[11px] font-medium text-slate-500 sm:text-xs">
+                      <HeartIcon className={`h-3.5 w-3.5 ${tone.icon}`} />
+                      Good Beginnings team
+                    </p>
+                  </div>
+                </li>
+              );
+            })}
           </ul>
         </div>
       </section>
@@ -139,3 +150,11 @@ export default function AboutPage() {
     </>
   );
 }
+
+/** Card colours for the staff grid, echoing the classroom colours. */
+const staffTones = [
+  { band: "bg-coral-light", avatar: "from-coral to-coral-mid", icon: "text-coral" },
+  { band: "bg-violet-100", avatar: "from-violet-500 to-fuchsia-400", icon: "text-violet-500" },
+  { band: "bg-pink-100", avatar: "from-pink-500 to-rose-400", icon: "text-pink-500" },
+  { band: "bg-sky-100", avatar: "from-sky-500 to-blue-500", icon: "text-sky-500" },
+];

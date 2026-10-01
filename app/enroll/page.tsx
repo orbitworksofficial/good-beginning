@@ -58,10 +58,10 @@ export default function EnrollPage() {
 
             <div className="reveal mt-8 overflow-hidden rounded-xl shadow-card">
               <Image
-                src="/images/classroom-room.jpg"
-                alt="A bright, welcoming classroom at Good Beginnings"
-                width={900}
-                height={600}
+                src="/images/family.jpeg"
+                alt="The Good Beginnings school building on Gorman Road"
+                width={1600}
+                height={1200}
                 className="h-full w-full object-cover"
               />
             </div>
