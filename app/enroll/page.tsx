@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import CtaBand from "../components/CtaBand";
+import EmailForm from "../components/EmailForm";
 import PageHero from "../components/PageHero";
 import SectionHeading from "../components/SectionHeading";
 import { CheckIcon } from "../components/Icons";
@@ -77,10 +78,9 @@ export default function EnrollPage() {
           </div>
 
           <div className="reveal">
-            <form
-              action={`mailto:${site.email}`}
-              method="post"
-              encType="text/plain"
+            <EmailForm
+              subject="Enrollment interest form"
+              nameField="parentName"
               className="rounded-xl border border-slate-200 bg-white p-7 shadow-card sm:p-8"
             >
               <div className="grid gap-5 sm:grid-cols-2">
@@ -135,7 +135,7 @@ export default function EnrollPage() {
                 </a>
                 .
               </p>
-            </form>
+            </EmailForm>
           </div>
         </div>
       </section>

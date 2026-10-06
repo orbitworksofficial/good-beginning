@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import CtaBand from "../components/CtaBand";
+import EmailForm from "../components/EmailForm";
 import PageHero from "../components/PageHero";
 import { site } from "../lib/site";
 
@@ -84,10 +85,9 @@ export default function ContactPage() {
               />
             </div>
 
-            <form
-              action={`mailto:${site.email}`}
-              method="post"
-              encType="text/plain"
+            <EmailForm
+              subject="Website message"
+              nameField="name"
               className="reveal rounded-xl border border-slate-200 bg-white p-7 shadow-card sm:p-8"
             >
               <h2 className="text-lg font-semibold text-navy">Email us</h2>
@@ -120,7 +120,7 @@ export default function ContactPage() {
               <button type="submit" className="btn-primary mt-6 w-full">
                 Send message
               </button>
-            </form>
+            </EmailForm>
           </div>
         </div>
       </section>
