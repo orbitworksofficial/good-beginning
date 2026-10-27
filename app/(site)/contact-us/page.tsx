@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import CtaBand from "../components/CtaBand";
-import EmailForm from "../components/EmailForm";
-import PageHero from "../components/PageHero";
-import { site } from "../lib/site";
+import CtaBand from "@/app/components/CtaBand";
+import EmailForm from "@/app/components/EmailForm";
+import PageHero from "@/app/components/PageHero";
+import { site } from "@/app/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact Us",

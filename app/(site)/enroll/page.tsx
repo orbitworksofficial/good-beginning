@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import CtaBand from "../components/CtaBand";
-import EmailForm from "../components/EmailForm";
-import PageHero from "../components/PageHero";
-import SectionHeading from "../components/SectionHeading";
-import { CheckIcon } from "../components/Icons";
-import { classrooms, enrollSteps, site } from "../lib/site";
+import CtaBand from "@/app/components/CtaBand";
+import EmailForm from "@/app/components/EmailForm";
+import PageHero from "@/app/components/PageHero";
+import SectionHeading from "@/app/components/SectionHeading";
+import { CheckIcon } from "@/app/components/Icons";
+import { classrooms, enrollSteps, site } from "@/app/lib/site";
 
 export const metadata: Metadata = {
   title: "Enroll",

@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import CtaBand from "../components/CtaBand";
-import PageHero from "../components/PageHero";
-import SectionHeading from "../components/SectionHeading";
-import { HeartIcon } from "../components/Icons";
-import { about, classrooms, staff } from "../lib/site";
+import CtaBand from "@/app/components/CtaBand";
+import PageHero from "@/app/components/PageHero";
+import SectionHeading from "@/app/components/SectionHeading";
+import { HeartIcon } from "@/app/components/Icons";
+import { about, classrooms, staff } from "@/app/lib/site";
 
 export const metadata: Metadata = {
   title: "About Us",

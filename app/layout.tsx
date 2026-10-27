@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
 import { Caveat, Inter } from "next/font/google";
 import "./globals.css";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import Reveal from "./components/Reveal";
 import { site } from "./lib/site";
 
 const inter = Inter({
@@ -49,19 +46,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${caveat.variable}`}>
-      <body className="font-sans">
-        <a
-          href="#main"
-          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-navy focus:px-5 focus:py-3 focus:text-sm focus:font-bold focus:text-white"
-        >
-          Skip to content
-        </a>
-        <Header />
-        <main id="main">{children}</main>
-        <Footer />
-        <Reveal />
-      </body>
+    <html lang="en" className={`${inter.variable} ${caveat.variable}`} data-scroll-behavior="smooth">
+      <body className="font-sans">{children}</body>
     </html>
   );
 }

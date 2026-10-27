@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import CtaBand from "../components/CtaBand";
-import PageHero from "../components/PageHero";
-import SectionHeading from "../components/SectionHeading";
-import { ArrowIcon, CheckIcon } from "../components/Icons";
-import { ourProgram, programs } from "../lib/site";
+import CtaBand from "@/app/components/CtaBand";
+import PageHero from "@/app/components/PageHero";
+import SectionHeading from "@/app/components/SectionHeading";
+import { ArrowIcon, CheckIcon } from "@/app/components/Icons";
+import { ourProgram, programs } from "@/app/lib/site";
 
 export const metadata: Metadata = {
   title: "Our Program",

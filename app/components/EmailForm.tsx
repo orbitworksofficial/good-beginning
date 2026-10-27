@@ -1,6 +1,7 @@
 "use client";
 
 import { site } from "../lib/site";
+import { trackEvent } from "../lib/track";
 
 /**
  * A form that turns its fields into a ready-to-send email instead of posting
@@ -43,6 +44,7 @@ export default function EmailForm({
     const who = String(data.get(nameField) ?? "").trim();
     const su = who ? `${subject} - ${who}` : subject;
     const body = lines.join("\n");
+    trackEvent("form_submit", subject);
 
     if (isMobile()) {
       window.location.href = `mailto:${site.email}?subject=${encodeURIComponent(su)}&body=${encodeURIComponent(body)}`;

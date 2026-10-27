@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import CtaBand from "./components/CtaBand";
-import HeroSlider from "./components/HeroSlider";
-import PhotoDeck from "./components/PhotoDeck";
-import SectionHeading from "./components/SectionHeading";
-import { ArrowIcon, CheckIcon, iconMap } from "./components/Icons";
+import CtaBand from "@/app/components/CtaBand";
+import HeroSlider from "@/app/components/HeroSlider";
+import PhotoDeck from "@/app/components/PhotoDeck";
+import SectionHeading from "@/app/components/SectionHeading";
+import { ArrowIcon, CheckIcon, iconMap } from "@/app/components/Icons";
 import {
   about,
   enrollSteps,
@@ -17,7 +17,7 @@ import {
   programs,
   site,
   whyUs,
-} from "./lib/site";
+} from "@/app/lib/site";
 
 export default function Home() {
   return (
